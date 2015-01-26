@@ -36,7 +36,9 @@ class WelcomeCommand extends PlatformCommand
         if ($currentProject = $this->getCurrentProject()) {
             // The project is known. Show the environments.
             $projectName = $currentProject['name'];
-            $output->writeln("\nYour project is <info>$projectName</info>.\n");
+            $projectId = $currentProject['id'];
+            $output->writeln("\nYour project name is <info>$projectName</info>.");
+            $output->writeln("Your project id 1is <info>$projectId</info>.\n");
             $envInput = new ArrayInput(array(
                 'command' => 'environments',
                 '--refresh' => 0,
